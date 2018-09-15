@@ -8,8 +8,11 @@
     <string name="login">登录</string>
     <string name="register">注册</string>
     <string name="fragment_first">这是第一个Fragment</string>
+    <string name="input_data">输入数据</string>
     <string name="add_a">添加FragmentA</string>
     <string name="add_b">添加FragmentB</string>
+    <string name="fragment_show">Fragment显示文字</string>
+    <string name="activity_show">Activity显示文字</string>
     <string name="a">FragmentA</string>
     <string name="b">FragmentB</string>
 </resources>

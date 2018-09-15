@@ -18,21 +18,40 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <EditText
+        android:inputType="text"
+        android:id="@+id/et_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/input_data" />
+
     <Button
         android:id="@+id/add_a"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/add_a"/>
+        android:text="@string/add_a" />
 
     <Button
         android:id="@+id/add_b"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/add_b"/>
+        android:text="@string/add_b" />
+
+    <Button
+        android:id="@+id/bt_fragment_show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fragment_show" />
+
+    <TextView
+        android:id="@+id/tv_activity_show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <FrameLayout
         android:id="@+id/fl_content"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        android:background="#00FF00" />
 </LinearLayout>
