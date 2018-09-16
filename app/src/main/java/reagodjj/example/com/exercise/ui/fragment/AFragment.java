@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import reagodjj.example.com.exercise.ui.DataChangeListener;
+import reagodjj.example.com.exercise.Listener.DataChangeListener;
 import reagodjj.example.com.exercise.R;
 
 public class AFragment extends Fragment {

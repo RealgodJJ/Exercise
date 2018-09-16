@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final String TAG = "RealgodJJ";
     private TextView tvHello;
     private EditText etUsername, etPassword;
-    private Button btLogin, btRegister;
+    private Button btLogin, btRegister, btViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +28,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         etPassword = findViewById(R.id.et_password);
         btLogin = findViewById(R.id.bt_login);
         btRegister = findViewById(R.id.bt_register);
+        btViewPager = findViewById(R.id.bt_view_pager);
 
         btLogin.setOnClickListener(this);
         btRegister.setOnClickListener(this);
+        btViewPager.setOnClickListener(this);
     }
 
     @Override
@@ -82,6 +84,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent_register = new Intent(MainActivity.this, RegisterActivity.class);
                 intent_register.setAction("reagodjj.example.com.exercise.register");
                 startActivityForResult(intent_register, 1);
+                break;
+
+            case R.id.bt_view_pager:
+                Intent intent = new Intent(MainActivity.this, ViewPagerActivity.class);
+                startActivity(intent);
                 break;
         }
     }

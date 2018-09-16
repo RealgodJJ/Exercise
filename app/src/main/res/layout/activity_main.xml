@@ -52,6 +52,12 @@
             android:text="@string/register"
             tools:ignore="ButtonStyle" />
 
+        <Button
+            android:id="@+id/bt_view_pager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/new_word"/>
+
     </LinearLayout>
 
 
