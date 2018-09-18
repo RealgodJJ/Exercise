@@ -87,13 +87,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.bt_view_pager:
-                Intent intent_view = new Intent(MainActivity.this, ViewPagerActivity.class);
-                startActivity(intent_view);
-                break;
-
-            case R.id.bt_fragment_view_pager:
-                Intent intent_fragment_view = new Intent(MainActivity.this, FragmentViewPagerActivity.class);
-                startActivity(intent_fragment_view);
+                Intent intent = new Intent(MainActivity.this, ViewPagerActivity.class);
+                startActivity(intent);
                 break;
         }
     }

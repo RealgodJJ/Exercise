@@ -24,8 +24,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.ViewPagerActivity" />
-        <activity android:name=".ui.FragmentViewPagerActivity" />
+        <activity android:name=".ui.ViewPagerActivity"/>
     </application>
 
 </manifest>
