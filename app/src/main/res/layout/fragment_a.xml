@@ -4,15 +4,8 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/tv_show_a"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/a"/>
-
-    <Button
-        android:id="@+id/bt_activity_show"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/activity_show"/>
 
 </LinearLayout>

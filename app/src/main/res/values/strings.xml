@@ -10,11 +10,8 @@
     <string name="change_view_pager">viewpager的页面</string>
     <string name="change_fragment_view_pager">fragmentviewpager的页面</string>
     <string name="fragment_first">这是第一个Fragment</string>
-    <string name="input_data">输入数据</string>
     <string name="add_a">添加FragmentA</string>
     <string name="add_b">添加FragmentB</string>
-    <string name="fragment_show">Fragment显示文字</string>
-    <string name="activity_show">Activity显示文字</string>
     <string name="a">FragmentA</string>
     <string name="b">FragmentB</string>
     <string name="my_name">RealgodJJ</string>
