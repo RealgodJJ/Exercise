@@ -9,6 +9,7 @@
     <string name="register">注册</string>
     <string name="change_view_pager">viewpager的页面</string>
     <string name="change_fragment_view_pager">fragmentviewpager的页面</string>
+    <string name="handler">进入Handler界面</string>
     <string name="fragment_first">这是第一个Fragment</string>
     <string name="input_data">输入数据</string>
     <string name="add_a">添加FragmentA</string>
@@ -18,4 +19,6 @@
     <string name="a">FragmentA</string>
     <string name="b">FragmentB</string>
     <string name="my_name">RealgodJJ</string>
+    <string name="inner_handler">inner_handler的形式</string>
+    <string name="extend_handler">extend_handler的形式</string>
 </resources>

@@ -16,7 +16,8 @@
         android:id="@+id/et_user"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/user" />
+        android:hint="@string/user"
+        tools:ignore="TextFields" />
 
     <EditText
         android:id="@+id/et_password"
@@ -63,15 +64,23 @@
             android:id="@+id/bt_view_pager"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/change_view_pager" />
+            android:text="@string/change_view_pager"
+            tools:ignore="ButtonStyle" />
 
         <Button
             android:id="@+id/bt_fragment_view_pager"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/change_fragment_view_pager" />
+            android:text="@string/change_fragment_view_pager"
+            tools:ignore="ButtonStyle" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/bt_handler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/inner_handler"/>
 
 
 </LinearLayout>
