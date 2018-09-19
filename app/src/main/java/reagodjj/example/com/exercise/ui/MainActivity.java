@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final String TAG = "RealgodJJ";
     private TextView tvHello;
     private EditText etUsername, etPassword;
-    private Button btLogin, btRegister, btViewPager;
+    private Button btLogin, btRegister, btViewPager, btFragmentViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,10 +29,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btLogin = findViewById(R.id.bt_login);
         btRegister = findViewById(R.id.bt_register);
         btViewPager = findViewById(R.id.bt_view_pager);
+        btFragmentViewPager = findViewById(R.id.bt_fragment_view_pager);
 
         btLogin.setOnClickListener(this);
         btRegister.setOnClickListener(this);
         btViewPager.setOnClickListener(this);
+        btFragmentViewPager.setOnClickListener(this);
     }
 
     @Override
