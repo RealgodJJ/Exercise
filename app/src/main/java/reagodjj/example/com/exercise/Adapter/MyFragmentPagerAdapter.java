@@ -3,11 +3,12 @@ package reagodjj.example.com.exercise.Adapter;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.util.SparseArray;
 
 import reagodjj.example.com.exercise.ui.fragment.TextFragment;
 
-public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
+public class MyFragmentPagerAdapter extends FragmentStatePagerAdapter {
 //    private List<Fragment> fragments;
     private SparseArray<Fragment> fragments;     //固定为Int类型的HashMap
 
