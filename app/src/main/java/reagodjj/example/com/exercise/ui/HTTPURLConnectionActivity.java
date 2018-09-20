@@ -1,6 +1,8 @@
 package reagodjj.example.com.exercise.ui;
 
 import android.annotation.SuppressLint;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,6 +32,8 @@ public class HTTPURLConnectionActivity extends AppCompatActivity {
     private static final String NET_URL = "https://www.sojson.com/api/gongan/baidu.com";
     private TextView tvFuck;
     private Button btGetData;
+    private Handler connectionHandler;
+    private PublicSecurityNetwork publicSecurityNetwork;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +56,14 @@ public class HTTPURLConnectionActivity extends AppCompatActivity {
 //                getDataFromInternet();
             }
         }).start();
+
+        connectionHandler = new Handler(new Handler.Callback() {
+            @Override
+            public boolean handleMessage(Message msg) {
+                tvFuck.setText(msg.obj.toString());
+                return false;
+            }
+        });
     }
 
     public void getDataFromInternet() {
@@ -101,12 +113,14 @@ public class HTTPURLConnectionActivity extends AppCompatActivity {
                     connection.disconnect();
 
                     //处理网络数据
-                    PublicSecurityNetwork publicSecurityNetwork = parseJson(result);
-//                    tvFuck.setText("");
-//                    tvFuck.append(String.valueOf(publicSecurityNetwork.getStatus()));
-//                    tvFuck.append(publicSecurityNetwork.getData().toString());
-                    Log.d("FUCK", String.valueOf(publicSecurityNetwork.toString()) +
-                            publicSecurityNetwork.getData().toString());
+                    publicSecurityNetwork = parseJson(result);
+                    String fuck = String.valueOf(publicSecurityNetwork.toString()) +
+                            publicSecurityNetwork.getData().toString();
+                    Log.d("FUCK", fuck);
+                    Message message = new Message();
+                    message.what = 1;
+                    message.obj = fuck;
+                    connectionHandler.sendMessage(message);
                 } catch (IOException | JSONException e) {
                     e.printStackTrace();
                 }
