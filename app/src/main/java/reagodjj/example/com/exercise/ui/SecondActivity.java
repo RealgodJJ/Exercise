@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import reagodjj.example.com.exercise.Listener.DataChangeListener;
+import reagodjj.example.com.exercise.listener.DataChangeListener;
 import reagodjj.example.com.exercise.R;
 import reagodjj.example.com.exercise.ui.fragment.AFragment;
 import reagodjj.example.com.exercise.ui.fragment.BFragment;

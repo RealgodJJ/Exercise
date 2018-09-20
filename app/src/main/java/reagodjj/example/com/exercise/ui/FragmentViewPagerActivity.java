@@ -1,16 +1,10 @@
 package reagodjj.example.com.exercise.ui;
 
-import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import reagodjj.example.com.exercise.Adapter.MyFragmentPagerAdapter;
-import reagodjj.example.com.exercise.ui.fragment.ImageFragment;
-import reagodjj.example.com.exercise.ui.fragment.TextFragment;
+import reagodjj.example.com.exercise.adapter.MyFragmentPagerAdapter;
 import reagodjj.example.com.exercise.R;
 
 public class FragmentViewPagerActivity extends AppCompatActivity {

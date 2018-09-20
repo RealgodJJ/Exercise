@@ -10,6 +10,7 @@
     <string name="change_view_pager">viewpager的页面</string>
     <string name="change_fragment_view_pager">fragmentviewpager的页面</string>
     <string name="handler">进入Handler界面</string>
+    <string name="connection">进入HTTPURLConnection界面</string>
     <string name="fragment_first">这是第一个Fragment</string>
     <string name="input_data">输入数据</string>
     <string name="add_a">添加FragmentA</string>
@@ -22,4 +23,5 @@
     <string name="inner_handler">inner_handler的形式</string>
     <string name="extend_handler">extend_handler的形式</string>
     <string name="fuck_you_all">FUCK YOU ALL</string>
+    <string name="get_internet_data">获取网络数据</string>
 </resources>

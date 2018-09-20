@@ -1,4 +1,4 @@
-package reagodjj.example.com.exercise.Adapter;
+package reagodjj.example.com.exercise.adapter;
 
 import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;

@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final String TAG = "RealgodJJ";
     private TextView tvHello;
     private EditText etUsername, etPassword;
-    private Button btLogin, btRegister, btViewPager, btFragmentViewPager, btHandler;
+    private Button btLogin, btRegister, btViewPager, btFragmentViewPager, btHandler, btConnection;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +31,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btViewPager = findViewById(R.id.bt_view_pager);
         btFragmentViewPager = findViewById(R.id.bt_fragment_view_pager);
         btHandler = findViewById(R.id.bt_handler);
+        btConnection = findViewById(R.id.bt_connection);
 
         btLogin.setOnClickListener(this);
         btRegister.setOnClickListener(this);
         btViewPager.setOnClickListener(this);
         btFragmentViewPager.setOnClickListener(this);
         btHandler.setOnClickListener(this);
+        btConnection.setOnClickListener(this);
     }
 
     @Override
@@ -103,6 +105,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.bt_handler:
                 Intent intent_handler = new Intent(MainActivity.this, MessageActivity.class);
                 startActivity(intent_handler);
+                break;
+
+            case R.id.bt_connection:
+                Intent intent_connection = new Intent(MainActivity.this, HTTPURLConnectionActivity.class);
+                startActivity(intent_connection);
                 break;
         }
     }

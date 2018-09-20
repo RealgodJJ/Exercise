@@ -76,11 +76,25 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/bt_handler"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/inner_handler"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
+        <Button
+            android:id="@+id/bt_handler"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/inner_handler"
+            tools:ignore="ButtonStyle" />
+
+        <Button
+            android:id="@+id/bt_connection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/connection"
+            tools:ignore="ButtonStyle" />
+
+    </LinearLayout>
 
 </LinearLayout>

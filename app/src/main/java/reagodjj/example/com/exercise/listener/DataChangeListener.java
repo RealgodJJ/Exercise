@@ -1,4 +1,4 @@
-package reagodjj.example.com.exercise.Listener;
+package reagodjj.example.com.exercise.listener;
 
 public interface DataChangeListener {
     void onDataChange(String data);

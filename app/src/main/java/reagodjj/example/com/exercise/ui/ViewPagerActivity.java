@@ -9,9 +9,8 @@ import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.zip.Inflater;
 
-import reagodjj.example.com.exercise.Adapter.MyPagerAdapter;
+import reagodjj.example.com.exercise.adapter.MyPagerAdapter;
 import reagodjj.example.com.exercise.R;
 
 public class ViewPagerActivity extends AppCompatActivity {
