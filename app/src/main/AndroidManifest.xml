@@ -33,6 +33,7 @@
         <activity android:name=".ui.MessageActivity" />
         <activity android:name=".ui.HTTPURLConnectionActivity" />
         <activity android:name=".ui.ListViewActivity" />
+        <activity android:name=".ui.NewListViewActivity" />
     </application>
 
 </manifest>

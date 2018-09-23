@@ -105,7 +105,15 @@
             android:id="@+id/bt_list_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/list_view"/>
+            android:text="@string/list_view"
+            tools:ignore="ButtonStyle" />
+
+        <Button
+            android:id="@+id/bt_new_list_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/new_list_view"
+            tools:ignore="ButtonStyle" />
 
     </LinearLayout>
 

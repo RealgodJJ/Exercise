@@ -12,6 +12,7 @@
     <string name="handler">进入Handler界面</string>
     <string name="connection">进入HTTPURLConnection界面</string>
     <string name="list_view">进入ListView界面</string>
+    <string name="new_list_view">进入新的ListView界面</string>
     <string name="fragment_first">这是第一个Fragment</string>
     <string name="input_data">输入数据</string>
     <string name="add_a">添加FragmentA</string>

@@ -15,7 +15,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final String TAG = "RealgodJJ";
     private TextView tvHello;
     private EditText etUsername, etPassword;
-    private Button btLogin, btRegister, btViewPager, btFragmentViewPager, btHandler, btConnection, btListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,13 +25,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tvHello = findViewById(R.id.tv_hello);
         etUsername = findViewById(R.id.et_user);
         etPassword = findViewById(R.id.et_password);
-        btLogin = findViewById(R.id.bt_login);
-        btRegister = findViewById(R.id.bt_register);
-        btViewPager = findViewById(R.id.bt_view_pager);
-        btFragmentViewPager = findViewById(R.id.bt_fragment_view_pager);
-        btHandler = findViewById(R.id.bt_handler);
-        btConnection = findViewById(R.id.bt_connection);
-        btListView = findViewById(R.id.bt_list_view);
+        Button btLogin = findViewById(R.id.bt_login);
+        Button btRegister = findViewById(R.id.bt_register);
+        Button btViewPager = findViewById(R.id.bt_view_pager);
+        Button btFragmentViewPager = findViewById(R.id.bt_fragment_view_pager);
+        Button btHandler = findViewById(R.id.bt_handler);
+        Button btConnection = findViewById(R.id.bt_connection);
+        Button btListView = findViewById(R.id.bt_list_view);
+        Button btNewListView = findViewById(R.id.bt_new_list_view);
 
         btLogin.setOnClickListener(this);
         btRegister.setOnClickListener(this);
@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btHandler.setOnClickListener(this);
         btConnection.setOnClickListener(this);
         btListView.setOnClickListener(this);
+        btNewListView.setOnClickListener(this);
     }
 
     @Override
@@ -117,6 +118,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.bt_list_view:
                 Intent intent_list_view = new Intent(MainActivity.this, ListViewActivity.class);
                 startActivity(intent_list_view);
+
+            case R.id.bt_new_list_view:
+                Intent intent_new_list_view = new Intent(MainActivity.this, NewListViewActivity.class);
+                startActivity(intent_new_list_view);
+                break;
         }
     }
 
