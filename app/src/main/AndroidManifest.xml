@@ -34,6 +34,9 @@
         <activity android:name=".ui.HTTPURLConnectionActivity" />
         <activity android:name=".ui.ListViewActivity" />
         <activity android:name=".ui.NewListViewActivity" />
+        <activity android:name=".ui.ServiceActivity" />
+
+        <service android:name=".service.MyService"/>
     </application>
 
 </manifest>
