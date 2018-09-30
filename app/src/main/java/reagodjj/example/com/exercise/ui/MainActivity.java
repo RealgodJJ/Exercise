@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button btListView = findViewById(R.id.bt_list_view);
         Button btNewListView = findViewById(R.id.bt_new_list_view);
         Button btService = findViewById(R.id.bt_service);
+        Button btBroadcast = findViewById(R.id.bt_broadcast);
 
         btLogin.setOnClickListener(this);
         btRegister.setOnClickListener(this);
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btListView.setOnClickListener(this);
         btNewListView.setOnClickListener(this);
         btService.setOnClickListener(this);
+        btBroadcast.setOnClickListener(this);
     }
 
     @Override
@@ -129,6 +131,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.bt_service:
                 Intent intent_service = new Intent(MainActivity.this, ServiceActivity.class);
                 startActivity(intent_service);
+                break;
+
+            case R.id.bt_broadcast:
+                Intent intent_broadcast = new Intent(MainActivity.this, BroadcastActivity.class);
+                startActivity(intent_broadcast);
                 break;
         }
     }

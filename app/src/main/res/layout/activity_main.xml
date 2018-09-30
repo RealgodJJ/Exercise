@@ -125,7 +125,15 @@
             android:id="@+id/bt_service"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/service"/>
+            android:text="@string/service"
+            tools:ignore="ButtonStyle" />
+
+        <Button
+            android:id="@+id/bt_broadcast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/broadcast"
+            tools:ignore="ButtonStyle" />
 
     </LinearLayout>
 

@@ -35,8 +35,49 @@
         <activity android:name=".ui.ListViewActivity" />
         <activity android:name=".ui.NewListViewActivity" />
         <activity android:name=".ui.ServiceActivity" />
+        <activity android:name=".ui.BroadcastActivity" />
 
-        <service android:name=".service.MyService"/>
+        <service android:name=".service.MyService" />
+
+        <receiver
+            android:name=".receiver.MyReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.AIRPLANE_MODE" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".receiver.FirstReceiver"
+            android:enabled="true"
+            android:exported="true"
+            tools:ignore="ExportedReceiver">
+            <intent-filter android:priority="1">
+                <action android:name="MYFUCK" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".receiver.SecondReceiver"
+            android:enabled="true"
+            android:exported="true"
+            tools:ignore="ExportedReceiver">
+            <intent-filter android:priority="10">
+                <action android:name="MYFUCK" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".receiver.ThirdReceiver"
+            android:enabled="true"
+            android:exported="true"
+            tools:ignore="ExportedReceiver">
+            <intent-filter android:priority="100">
+                <action android:name="MYFUCK" />
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>
