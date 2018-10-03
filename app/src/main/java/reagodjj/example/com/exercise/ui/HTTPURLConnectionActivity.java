@@ -28,8 +28,8 @@ import reagodjj.example.com.exercise.entity.PublicSecurityNetwork;
 
 @SuppressLint("Registered")
 public class HTTPURLConnectionActivity extends AppCompatActivity {
-    private static final String BASE_URL = "http://www.mengxianyi.net/one/homepage.json";
-    private static final String NET_URL = "https://www.sojson.com/api/gongan/baidu.com";
+//    private static final String BASE_URL = "http://www.mengxianyi.net/one/homepage.json";
+    private static final String NET_URL = "https://www.sojson.com/api/gongan/sina.com.cn";
     private TextView tvFuck;
     private Button btGetData;
     private Handler connectionHandler;
@@ -66,29 +66,29 @@ public class HTTPURLConnectionActivity extends AppCompatActivity {
         });
     }
 
-    public void getDataFromInternet() {
-        try {
-            URL url = new URL(BASE_URL);
-            HttpURLConnection httpURLConnection = (HttpURLConnection) url.getContent();
-            httpURLConnection.setRequestMethod("GET");
-            InputStream inputStream = httpURLConnection.getInputStream();
-            StringBuilder stringBuilder = new StringBuilder();
-//            StringBuffer stringBuffer = new StringBuffer();
-            String line;
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-            while ((line = bufferedReader.readLine()) != null) {
-                stringBuilder.append(line);
-            }
-            String response = stringBuilder.toString();
-            Log.d("RealgodJJ", response);
-            bufferedReader.close();
-            inputStream.close();
-            httpURLConnection.disconnect();
-//            textView.setText(response);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+//    public void getDataFromInternet() {
+//        try {
+//            URL url = new URL(BASE_URL);
+//            HttpURLConnection httpURLConnection = (HttpURLConnection) url.getContent();
+//            httpURLConnection.setRequestMethod("GET");
+//            InputStream inputStream = httpURLConnection.getInputStream();
+//            StringBuilder stringBuilder = new StringBuilder();
+////            StringBuffer stringBuffer = new StringBuffer();
+//            String line;
+//            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+//            while ((line = bufferedReader.readLine()) != null) {
+//                stringBuilder.append(line);
+//            }
+//            String response = stringBuilder.toString();
+//            Log.d("RealgodJJ", response);
+//            bufferedReader.close();
+//            inputStream.close();
+//            httpURLConnection.disconnect();
+////            textView.setText(response);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     public void getNetData() {
         new Thread(new Runnable() {
@@ -114,8 +114,7 @@ public class HTTPURLConnectionActivity extends AppCompatActivity {
 
                     //处理网络数据
                     publicSecurityNetwork = parseJson(result);
-                    String fuck = String.valueOf(publicSecurityNetwork.toString()) +
-                            publicSecurityNetwork.getData().toString();
+                    String fuck = publicSecurityNetwork.toString();
                     Log.d("FUCK", fuck);
                     Message message = new Message();
                     message.what = 1;
@@ -161,8 +160,8 @@ public class HTTPURLConnectionActivity extends AppCompatActivity {
             if (dataJson.has("sitetype")) {
                 data.setSiteType(dataJson.getString("sitetype"));
             }
-            if (dataJson.has("updatetime")) {
-                data.setUpdateTime(dataJson.getString("updatetime"));
+            if (dataJson.has("updateTime")) {
+                data.setUpdateTime(dataJson.getString("updateTime"));
             }
             publicSecurityNetwork.setData(data);
         }

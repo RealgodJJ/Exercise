@@ -1,7 +1,5 @@
 package reagodjj.example.com.exercise.entity;
 
-import java.util.List;
-
 public class PublicSecurityNetwork {
     private int status;
     private Data data;
