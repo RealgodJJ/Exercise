@@ -77,9 +77,9 @@
     </LinearLayout>
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/bt_handler"
@@ -99,7 +99,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/bt_list_view"
@@ -119,7 +120,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/bt_service"
@@ -133,6 +135,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/broadcast"
+            tools:ignore="ButtonStyle" />
+
+        <Button
+            android:id="@+id/bt_content_provider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/content_provider"
             tools:ignore="ButtonStyle" />
 
     </LinearLayout>

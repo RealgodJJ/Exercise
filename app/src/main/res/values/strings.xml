@@ -15,6 +15,7 @@
     <string name="new_list_view">进入新的ListView界面</string>
     <string name="service">进入Service界面</string>
     <string name="broadcast">进入广播页面</string>
+    <string name="content_provider">进入ContentProvider页面</string>
     <string name="get_broadcast">接收到广播</string>
     <string name="fragment_first">这是第一个Fragment</string>
     <string name="input_data">输入数据</string>
@@ -39,4 +40,6 @@
     <string name="dynamic_send_disorder_broadcast">动态发送无序广播</string>
     <string name="static_send_order_broadcast">静态发送有序广播</string>
     <string name="dynamic_send_order_broadcast">动态发送有序广播</string>
+    <string name="get_call_log">显示电话记录</string>
+    <string name="get_my_provider">获得数据库资料</string>
 </resources>
