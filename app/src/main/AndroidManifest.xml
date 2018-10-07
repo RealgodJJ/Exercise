@@ -4,7 +4,6 @@
     package="reagodjj.example.com.exercise">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.READ_CALL_LOG" />
 
     <application
@@ -39,6 +38,7 @@
         <activity android:name=".ui.ServiceActivity" />
         <activity android:name=".ui.BroadcastActivity" />
         <activity android:name=".ui.ContentProviderActivity" />
+        <activity android:name=".ui.SlidingMenuActivity" />
 
         <service android:name=".service.MyService" />
 
@@ -77,6 +77,8 @@
                 <action android:name="MYFUCK" />
             </intent-filter>
         </receiver>
+
+
     </application>
 
 </manifest>

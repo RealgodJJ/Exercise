@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button btService = findViewById(R.id.bt_service);
         Button btBroadcast = findViewById(R.id.bt_broadcast);
         Button btContentProvider = findViewById(R.id.bt_content_provider);
+        Button btSlideMenu = findViewById(R.id.bt_slide_menu);
 
         btLogin.setOnClickListener(this);
         btRegister.setOnClickListener(this);
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btService.setOnClickListener(this);
         btBroadcast.setOnClickListener(this);
         btContentProvider.setOnClickListener(this);
+        btSlideMenu.setOnClickListener(this);
     }
 
     @Override
@@ -144,6 +146,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent_content_provider = new Intent(MainActivity.this, ContentProviderActivity.class);
                 startActivity(intent_content_provider);
                 break;
+
+            case R.id.bt_slide_menu:
+                Intent intent_slide_menu = new Intent(MainActivity.this, SlidingMenuActivity.class);
+                startActivity(intent_slide_menu);
+                break;
         }
     }
 
@@ -157,7 +164,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void changeText(View view) {
-//        tvHello.setText(R.string.new_word);
         String text = etPassword.getText().toString();
         tvHello.setText(text);
     }
