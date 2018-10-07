@@ -22,8 +22,6 @@ public class MyHorizontalScrollView extends HorizontalScrollView {
     /**
      * 未使用自定义属性时调用
      *
-     * @param context
-     * @param attrs
      */
     public MyHorizontalScrollView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -45,8 +43,6 @@ public class MyHorizontalScrollView extends HorizontalScrollView {
     /**
      * 设置子view的宽和高，设置自己的宽和高
      *
-     * @param widthMeasureSpec
-     * @param heightMeasureSpec
      */
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -64,11 +60,6 @@ public class MyHorizontalScrollView extends HorizontalScrollView {
     /**
      * 通过设置偏移量，将menu隐藏
      *
-     * @param changed
-     * @param l
-     * @param t
-     * @param r
-     * @param b
      */
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
