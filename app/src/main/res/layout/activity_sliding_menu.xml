@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:hyman="http://schemas.android.com/apk/res/reagodjj.example.com.exercise"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/img_frame_background"
-    tools:context=".ui.SlidingMenuActivity">
+    tools:context=".ui.SlidingMenuActivity"
+    tools:ignore="ResAuto">
 
     <reagodjj.example.com.exercise.view.MyHorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        hyman:rightPadding="60dp"
         tools:ignore="UselessParent">
 
         <LinearLayout

@@ -2,6 +2,7 @@ package reagodjj.example.com.exercise.view;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
@@ -10,6 +11,8 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
+
+import reagodjj.example.com.exercise.R;
 
 public class MyHorizontalScrollView extends HorizontalScrollView {
     private LinearLayout mWapper;//横向水平滚动条中的布局
@@ -21,10 +24,42 @@ public class MyHorizontalScrollView extends HorizontalScrollView {
 
     /**
      * 未使用自定义属性时调用
-     *
      */
     public MyHorizontalScrollView(Context context, AttributeSet attrs) {
-        super(context, attrs);
+        this(context, attrs, 0);
+
+    }
+
+    /**
+     * 当使用了自定义的属性时，会调用此构造方法
+     *
+     * @param context
+     */
+    public MyHorizontalScrollView(Context context) {
+        this(context, null);
+    }
+
+    public MyHorizontalScrollView(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        //获取定义的属性
+        @SuppressLint("Recycle")
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.MyHorizontalScrollView,
+                defStyleAttr, 0);
+
+        //判断自定义属性的位置
+        int attrNum = typedArray.getIndexCount();
+        for (int i = 0; i < attrNum; i++) {
+            int attr = typedArray.getIndex(i);
+            switch (attr) {
+                case R.styleable.MyHorizontalScrollView_rightPadding:
+                    mMenuRightPadding = typedArray.getDimensionPixelSize(attr,
+                            (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
+                                    50, context.getResources().getDisplayMetrics()));
+                    break;
+            }
+        }
+        typedArray.recycle();
+
         //获取窗口管理器
         WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         //通过DisplayMetrics多包含的信息，获取屏幕的宽和高
@@ -34,15 +69,13 @@ public class MyHorizontalScrollView extends HorizontalScrollView {
         windowManager.getDefaultDisplay().getMetrics(displayMetrics);
         mScreenWidth = displayMetrics.widthPixels;
 
-        //把单位dp转换为px
-        mMenuRightPadding = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
-                50, context.getResources().getDisplayMetrics());
+//        //把单位dp转换为px
+//        mMenuRightPadding = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
+//                50, context.getResources().getDisplayMetrics());
     }
-
 
     /**
      * 设置子view的宽和高，设置自己的宽和高
-     *
      */
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -59,7 +92,6 @@ public class MyHorizontalScrollView extends HorizontalScrollView {
 
     /**
      * 通过设置偏移量，将menu隐藏
-     *
      */
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
