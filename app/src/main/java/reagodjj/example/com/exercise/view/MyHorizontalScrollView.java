@@ -20,7 +20,8 @@ public class MyHorizontalScrollView extends HorizontalScrollView {
     private int mScreenWidth;//屏幕宽度
     private int mMenuWidth;//菜单栏的宽度
     private int mMenuRightPadding;//菜单栏和屏幕右侧的距离(dp)
-    private boolean once = false;
+    private boolean once;
+    private boolean isOpen;
 
     /**
      * 未使用自定义属性时调用
@@ -46,7 +47,7 @@ public class MyHorizontalScrollView extends HorizontalScrollView {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.MyHorizontalScrollView,
                 defStyleAttr, 0);
 
-        //判断自定义属性的位置
+        //遍历并判断自定义属性
         int attrNum = typedArray.getIndexCount();
         for (int i = 0; i < attrNum; i++) {
             int attr = typedArray.getIndex(i);
@@ -110,11 +111,38 @@ public class MyHorizontalScrollView extends HorizontalScrollView {
                 int scrollX = getScrollX();
                 if (scrollX >= mMenuWidth / 2) {
                     this.smoothScrollTo(mMenuWidth, 0);
+                    isOpen = false;
                 } else {
                     this.smoothScrollTo(0, 0);
+                    isOpen = true;
                 }
                 return true;
         }
         return super.onTouchEvent(ev);
+    }
+
+
+    /**
+     * 打开菜单
+     */
+    public void openMenu() {
+        if (isOpen)
+            return;
+        this.smoothScrollTo(0, 0);
+        isOpen = true;
+    }
+
+    public void closeMenu() {
+        if (!isOpen)
+            return;
+        this.smoothScrollTo(mMenuWidth, 0);
+        isOpen = false;
+    }
+
+    public void toggle() {
+        if (isOpen)
+            closeMenu();
+        else
+            openMenu();
     }
 }

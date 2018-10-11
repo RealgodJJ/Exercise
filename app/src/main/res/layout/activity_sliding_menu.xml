@@ -9,6 +9,7 @@
     tools:ignore="ResAuto">
 
     <reagodjj.example.com.exercise.view.MyHorizontalScrollView
+        android:id="@+id/ms_menu"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         hyman:rightPadding="60dp"
@@ -24,7 +25,16 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@mipmap/qq" />
+                android:background="@mipmap/qq">
+
+                <Button
+                    android:id="@+id/bt_toggle_menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="toggleMenu"
+                    android:text="@string/toggle_menu" />
+
+            </LinearLayout>
 
         </LinearLayout>
 

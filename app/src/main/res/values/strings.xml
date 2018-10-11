@@ -48,4 +48,5 @@
     <string name="third_item">第3个item</string>
     <string name="fourth_item">第4个item</string>
     <string name="fifth_item">第5个item</string>
+    <string name="toggle_menu">切换菜单</string>
 </resources>
