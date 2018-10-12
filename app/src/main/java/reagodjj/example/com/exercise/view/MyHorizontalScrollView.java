@@ -3,6 +3,7 @@ package reagodjj.example.com.exercise.view;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.support.v4.widget.ViewDragHelper;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
@@ -11,6 +12,8 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
+
+import com.nineoldandroids.view.ViewHelper;
 
 import reagodjj.example.com.exercise.R;
 
@@ -33,8 +36,6 @@ public class MyHorizontalScrollView extends HorizontalScrollView {
 
     /**
      * 当使用了自定义的属性时，会调用此构造方法
-     *
-     * @param context
      */
     public MyHorizontalScrollView(Context context) {
         this(context, null);
@@ -144,5 +145,17 @@ public class MyHorizontalScrollView extends HorizontalScrollView {
             closeMenu();
         else
             openMenu();
+    }
+
+
+    /**
+     * 滚动发生时调用
+     */
+    @Override
+    protected void onScrollChanged(int l, int t, int oldl, int oldt) {
+        super.onScrollChanged(l, t, oldl, oldt);
+        //调用属性动画，设置TranslationX（为了实现抽屉式侧滑效果）
+        float scale = l * 1.0f / mMenuWidth;
+        ViewHelper.setTranslationX(mMenu, mMenuWidth * scale);
     }
 }
