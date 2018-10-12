@@ -3,7 +3,6 @@ package reagodjj.example.com.exercise.view;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.support.v4.widget.ViewDragHelper;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
@@ -14,6 +13,8 @@ import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 
 import com.nineoldandroids.view.ViewHelper;
+import com.wangjie.shadowviewhelper.ShadowProperty;
+import com.wangjie.shadowviewhelper.ShadowViewHelper;
 
 import reagodjj.example.com.exercise.R;
 
@@ -154,8 +155,35 @@ public class MyHorizontalScrollView extends HorizontalScrollView {
     @Override
     protected void onScrollChanged(int l, int t, int oldl, int oldt) {
         super.onScrollChanged(l, t, oldl, oldt);
+
         //调用属性动画，设置TranslationX（为了实现抽屉式侧滑效果）
         float scale = l * 1.0f / mMenuWidth;
-        ViewHelper.setTranslationX(mMenu, mMenuWidth * scale);
+
+        /*
+         * 区别1：内容区域1.0~0.7 缩放的效果 scale : 1.0~0.0 0.7 + 0.3 * scale
+         *
+         * 区别2：菜单的偏移量需要修改
+         *
+         * 区别3：菜单的显示时有缩放以及透明度变化 缩放：
+         * 0.7 ~1.0 1.0 - scale * 0.3
+         * 透明度 0.6 ~ 1.0 0.6+ 0.4 * (1- scale) ;
+         *
+         */
+
+        float rightScale = 0.7f + 0.3f * scale;
+        float leftScale = 1.0f - scale * 0.3f;
+        float leftAlpha = 1.0f - scale * 0.4f;
+
+        //设置Menu的动画效果
+        ViewHelper.setTranslationX(mMenu, mMenuWidth * scale * 0.8f);
+        ViewHelper.setScaleX(mMenu, leftScale);
+        ViewHelper.setScaleY(mMenu, leftScale);
+        ViewHelper.setAlpha(mMenu, leftAlpha);
+
+        //设置Content缩放的中心点
+        ViewHelper.setPivotX(mContent, 0);
+        ViewHelper.setPivotY(mContent, mContent.getHeight() / 2);
+        ViewHelper.setScaleX(mContent, rightScale);
+        ViewHelper.setScaleY(mContent, rightScale);
     }
 }
