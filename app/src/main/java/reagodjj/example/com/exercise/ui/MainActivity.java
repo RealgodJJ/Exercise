@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button btBroadcast = findViewById(R.id.bt_broadcast);
         Button btContentProvider = findViewById(R.id.bt_content_provider);
         Button btSlideMenu = findViewById(R.id.bt_slide_menu);
+        Button btSetAnimator = findViewById(R.id.bt_set_animator);
 
         btLogin.setOnClickListener(this);
         btRegister.setOnClickListener(this);
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btBroadcast.setOnClickListener(this);
         btContentProvider.setOnClickListener(this);
         btSlideMenu.setOnClickListener(this);
+        btSetAnimator.setOnClickListener(this);
     }
 
     @Override
@@ -150,6 +152,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.bt_slide_menu:
                 Intent intent_slide_menu = new Intent(MainActivity.this, SlidingMenuActivity.class);
                 startActivity(intent_slide_menu);
+                break;
+
+            case R.id.bt_set_animator:
+                Intent intent_set_animator = new Intent(MainActivity.this, AnimatorActivity.class);
+                startActivity(intent_set_animator);
                 break;
         }
     }

@@ -17,6 +17,7 @@
     <string name="broadcast">进入广播页面</string>
     <string name="content_provider">进入ContentProvider页面</string>
     <string name="slide_menu">进入滑动菜单页面</string>
+    <string name="set_animator">进入设置动画效果页面</string>
     <string name="get_broadcast">接收到广播</string>
     <string name="fragment_first">这是第一个Fragment</string>
     <string name="input_data">输入数据</string>
@@ -49,4 +50,8 @@
     <string name="fourth_item">第4个item</string>
     <string name="fifth_item">第5个item</string>
     <string name="toggle_menu">切换菜单</string>
+    <string name="set_alpha">透明度切换</string>
+    <string name="set_scale">图片比例变换</string>
+    <string name="set_translate">移动变换</string>
+    <string name="set_rotate">旋转变换</string>
 </resources>
