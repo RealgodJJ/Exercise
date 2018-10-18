@@ -39,6 +39,8 @@
         <activity android:name=".ui.BroadcastActivity" />
         <activity android:name=".ui.ContentProviderActivity" />
         <activity android:name=".ui.SlidingMenuActivity" />
+        <activity android:name=".ui.AnimatorActivity" />
+        <activity android:name=".ui.ChangePageActivity" />
 
         <service android:name=".service.MyService" />
 
@@ -77,8 +79,6 @@
                 <action android:name="MYFUCK" />
             </intent-filter>
         </receiver>
-
-        <activity android:name=".ui.AnimatorActivity" />
     </application>
 
 </manifest>

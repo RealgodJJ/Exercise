@@ -48,6 +48,41 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/bt_set_continue_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/set_continue_1"
+            tools:ignore="ButtonStyle" />
+
+        <Button
+            android:id="@+id/bt_set_continue_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/set_continue_2"
+            tools:ignore="ButtonStyle" />
+
+        <Button
+            android:id="@+id/bt_set_flash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/set_blink"
+            tools:ignore="ButtonStyle" />
+
+        <Button
+            android:id="@+id/bt_change_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/change_activity"
+            tools:ignore="ButtonStyle" />
+
+    </LinearLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">

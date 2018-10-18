@@ -54,4 +54,8 @@
     <string name="set_scale">图片比例变换</string>
     <string name="set_translate">移动变换</string>
     <string name="set_rotate">旋转变换</string>
+    <string name="set_continue_1">续播1</string>
+    <string name="set_continue_2">续播2</string>
+    <string name="set_blink">闪烁</string>
+    <string name="change_activity">切换页面</string>
 </resources>
