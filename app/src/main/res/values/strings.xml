@@ -58,4 +58,6 @@
     <string name="set_continue_2">续播2</string>
     <string name="set_blink">闪烁</string>
     <string name="change_activity">切换页面</string>
+    <string name="layout_animation">布局动画</string>
+    <string name="frame_animation">逐帧动画</string>
 </resources>

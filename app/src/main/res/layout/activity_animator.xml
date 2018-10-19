@@ -83,6 +83,27 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/bt_set_layout_animation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/layout_animation"
+            tools:ignore="ButtonStyle" />
+
+        <Button
+            android:id="@+id/bt_set_frame_animation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/frame_animation"
+            tools:ignore="ButtonStyle" />
+
+    </LinearLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">

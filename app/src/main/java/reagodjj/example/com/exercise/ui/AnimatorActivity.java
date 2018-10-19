@@ -1,6 +1,7 @@
 package reagodjj.example.com.exercise.ui;
 
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,7 +15,7 @@ import reagodjj.example.com.exercise.R;
 
 public class AnimatorActivity extends AppCompatActivity implements View.OnClickListener {
     private Button btSetAlpha, btSetScale, btSetTranslate, btSetRotate, btSetContinue1,
-            btSetContinue2, btSetFlash, btChangeActivity;
+            btSetContinue2, btSetFlash, btChangeActivity, btSetLayoutAnimation, btSetFrameAnimation;
     private ImageView imageChanged;
 
     @Override
@@ -31,6 +32,8 @@ public class AnimatorActivity extends AppCompatActivity implements View.OnClickL
         btSetContinue2 = findViewById(R.id.bt_set_continue_2);
         btSetFlash = findViewById(R.id.bt_set_flash);
         btChangeActivity = findViewById(R.id.bt_change_activity);
+        btSetLayoutAnimation = findViewById(R.id.bt_set_layout_animation);
+        btSetFrameAnimation = findViewById(R.id.bt_set_frame_animation);
 
         btSetAlpha.setOnClickListener(this);
         btSetScale.setOnClickListener(this);
@@ -40,6 +43,8 @@ public class AnimatorActivity extends AppCompatActivity implements View.OnClickL
         btSetContinue2.setOnClickListener(this);
         btSetFlash.setOnClickListener(this);
         btChangeActivity.setOnClickListener(this);
+        btSetLayoutAnimation.setOnClickListener(this);
+        btSetFrameAnimation.setOnClickListener(this);
     }
 
     @Override
@@ -103,6 +108,23 @@ public class AnimatorActivity extends AppCompatActivity implements View.OnClickL
                 Intent intent = new Intent(AnimatorActivity.this, ChangePageActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.zoom_in, R.anim.zoom_out);
+                break;
+
+            case R.id.bt_set_layout_animation:
+                Intent intent1 = new Intent(AnimatorActivity.this, LayoutAnimationActivity.class);
+                startActivity(intent1);
+                break;
+
+            case R.id.bt_set_frame_animation:
+                imageChanged.setImageResource(R.drawable.anim_list);
+                final AnimationDrawable animationDrawable = (AnimationDrawable) imageChanged.getDrawable();
+                imageChanged.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        animationDrawable.start();
+                    }
+                });
+                break;
         }
     }
 }

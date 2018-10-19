@@ -79,6 +79,8 @@
                 <action android:name="MYFUCK" />
             </intent-filter>
         </receiver>
+
+        <activity android:name=".ui.LayoutAnimationActivity"></activity>
     </application>
 
 </manifest>
