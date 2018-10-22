@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button btContentProvider = findViewById(R.id.bt_content_provider);
         Button btSlideMenu = findViewById(R.id.bt_slide_menu);
         Button btSetAnimator = findViewById(R.id.bt_set_animator);
+        Button btSetRadioButton = findViewById(R.id.bt_set_radio_button);
 
         btLogin.setOnClickListener(this);
         btRegister.setOnClickListener(this);
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btContentProvider.setOnClickListener(this);
         btSlideMenu.setOnClickListener(this);
         btSetAnimator.setOnClickListener(this);
+        btSetRadioButton.setOnClickListener(this);
     }
 
     @Override
@@ -157,6 +159,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.bt_set_animator:
                 Intent intent_set_animator = new Intent(MainActivity.this, AnimatorActivity.class);
                 startActivity(intent_set_animator);
+                break;
+
+            case R.id.bt_set_radio_button:
+                Intent intent_set_radio_button = new Intent(MainActivity.this, RadioButtonActivity.class);
+                startActivity(intent_set_radio_button);
                 break;
         }
     }

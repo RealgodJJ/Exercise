@@ -80,7 +80,8 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".ui.LayoutAnimationActivity"></activity>
+        <activity android:name=".ui.LayoutAnimationActivity" />
+        <activity android:name=".ui.RadioButtonActivity"></activity>
     </application>
 
 </manifest>
