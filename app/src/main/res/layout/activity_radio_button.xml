@@ -32,4 +32,37 @@
 
     </RadioGroup>
 
+    <TextView
+        android:id="@+id/tv_ask_happy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ask_happy" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_happy"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@mipmap/unhappy"
+            tools:ignore="ContentDescription" />
+
+        <ToggleButton
+            android:id="@+id/tb_happy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textOff="@string/unhappy"
+            android:textOn="@string/happy" />
+
+    </LinearLayout>
+
+    <SeekBar
+        android:id="@+id/sb_process"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>

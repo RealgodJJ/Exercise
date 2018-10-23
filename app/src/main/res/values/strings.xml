@@ -65,4 +65,7 @@
     <string name="male">男</string>
     <string name="female">女</string>
     <string name="sex_choice">您选择的性别是：%1$s</string>
+    <string name="ask_happy">您今天是否开心？</string>
+    <string name="happy">开心</string>
+    <string name="unhappy">不开心</string>
 </resources>
