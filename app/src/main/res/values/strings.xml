@@ -68,4 +68,11 @@
     <string name="ask_happy">您今天是否开心？</string>
     <string name="happy">开心</string>
     <string name="unhappy">不开心</string>
+    <string name="small_progressbar">小进度条</string>
+    <string name="normal_progressbar">普通进度条</string>
+    <string name="large_progressbar">超大进度条</string>
+    <string name="horizontal_progressbar">水平进度条</string>
+    <string name="add_main_process">增加主进度条</string>
+    <string name="add_second_process">增加次进度条</string>
+    <string name="rate_information">评分：%1$s\t\t\t步进：%2$s\t\t\t是否交互：%3$b</string>
 </resources>
