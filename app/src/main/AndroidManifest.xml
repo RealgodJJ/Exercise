@@ -81,7 +81,8 @@
         </receiver>
 
         <activity android:name=".ui.LayoutAnimationActivity" />
-        <activity android:name=".ui.RadioButtonActivity"></activity>
+        <activity android:name=".ui.RadioButtonActivity" />
+        <activity android:name=".ui.TableAndGridActivity" />
     </application>
 
 </manifest>
