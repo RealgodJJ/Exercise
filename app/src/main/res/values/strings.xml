@@ -19,7 +19,8 @@
     <string name="slide_menu">进入滑动菜单页面</string>
     <string name="set_animator">进入设置动画效果页面</string>
     <string name="set_radio_button">进入设置单选框页面</string>
-    <string name="set_menu">进入设置菜单页面</string>
+    <string name="set_option_menu">进入设置选项菜单页面</string>
+    <string name="set_context_menu">进入设置上下文菜单页面</string>
     <string name="get_broadcast">接收到广播</string>
     <string name="fragment_first">这是第一个Fragment</string>
     <string name="input_data">输入数据</string>

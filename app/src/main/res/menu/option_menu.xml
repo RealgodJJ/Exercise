@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/i_save"
+        android:icon="@mipmap/save"
         android:title="@string/save" />
 
     <item
         android:id="@+id/i_settings"
+        android:icon="@mipmap/settings"
         android:title="@string/settings" />
 
     <item
         android:id="@+id/i_more"
-        android:title="@string/more">
+        android:icon="@mipmap/more"
+        android:title="@string/more"
+        app:showAsAction="always">
 
         <menu>
 

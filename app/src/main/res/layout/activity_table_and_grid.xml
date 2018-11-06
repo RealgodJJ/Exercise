@@ -7,69 +7,70 @@
     tools:context=".ui.TableAndGridActivity">
 
     <TableLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:stretchColumns="0,1,2,3">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="0,1,2,3">
 
-    <TableRow>
+        <TableRow>
 
-    <Button
-    android:text="7"
-    tools:ignore="ButtonStyle,HardcodedText" />
+            <Button
+                android:id="@+id/bt_context_menu"
+                android:text="7"
+                tools:ignore="ButtonStyle,HardcodedText" />
 
-    <Button
-    android:text="8"
-    tools:ignore="ButtonStyle,HardcodedText" />
+            <Button
+                android:text="8"
+                tools:ignore="ButtonStyle,HardcodedText" />
 
-    <Button
-    android:text="9"
-    tools:ignore="ButtonStyle,HardcodedText" />
+            <Button
+                android:text="9"
+                tools:ignore="ButtonStyle,HardcodedText" />
 
-    <Button
-    android:text="/"
-    tools:ignore="ButtonStyle,HardcodedText" />
+            <Button
+                android:text="/"
+                tools:ignore="ButtonStyle,HardcodedText" />
 
-    </TableRow>
+        </TableRow>
 
-    <TableRow>
+        <TableRow>
 
-    <Button
-    android:text="4"
-    tools:ignore="ButtonStyle,HardcodedText" />
+            <Button
+                android:text="4"
+                tools:ignore="ButtonStyle,HardcodedText" />
 
-    <Button
-    android:text="5"
-    tools:ignore="ButtonStyle,HardcodedText" />
+            <Button
+                android:text="5"
+                tools:ignore="ButtonStyle,HardcodedText" />
 
-    <Button
-    android:text="6"
-    tools:ignore="ButtonStyle,HardcodedText" />
+            <Button
+                android:text="6"
+                tools:ignore="ButtonStyle,HardcodedText" />
 
-    <Button
-    android:text="*"
-    tools:ignore="ButtonStyle,HardcodedText" />
+            <Button
+                android:text="*"
+                tools:ignore="ButtonStyle,HardcodedText" />
 
-    </TableRow>
+        </TableRow>
 
-    <TableRow>
+        <TableRow>
 
-    <Button
-    android:text="1"
-    tools:ignore="ButtonStyle,HardcodedText" />
+            <Button
+                android:text="1"
+                tools:ignore="ButtonStyle,HardcodedText" />
 
-    <Button
-    android:text="2"
-    tools:ignore="ButtonStyle,HardcodedText" />
+            <Button
+                android:text="2"
+                tools:ignore="ButtonStyle,HardcodedText" />
 
-    <Button
-    android:text="3"
-    tools:ignore="ButtonStyle,HardcodedText" />
+            <Button
+                android:text="3"
+                tools:ignore="ButtonStyle,HardcodedText" />
 
-    <Button
-    android:text="-"
-    tools:ignore="ButtonStyle,HardcodedText" />
+            <Button
+                android:text="-"
+                tools:ignore="ButtonStyle,HardcodedText" />
 
-    </TableRow>
+        </TableRow>
 
     </TableLayout>
 
@@ -129,9 +130,9 @@
 
         <Button
             android:layout_columnSpan="2"
+            android:layout_gravity="fill"
             android:text="0"
-            tools:ignore="HardcodedText"
-            android:layout_gravity="fill"/>
+            tools:ignore="HardcodedText" />
 
         <Button
             android:text="."
@@ -139,17 +140,16 @@
 
         <Button
             android:layout_rowSpan="2"
-            android:text="+"
             android:layout_gravity="fill"
+            android:text="+"
             tools:ignore="HardcodedText" />
 
         <Button
             android:layout_columnSpan="3"
-            android:text="="
             android:layout_gravity="fill"
+            android:text="="
             tools:ignore="HardcodedText" />
     </GridLayout>
-
 
 </LinearLayout>
 

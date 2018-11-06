@@ -39,7 +39,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button btSlideMenu = findViewById(R.id.bt_slide_menu);
         Button btSetAnimator = findViewById(R.id.bt_set_animator);
         Button btSetRadioButton = findViewById(R.id.bt_set_radio_button);
-        Button btSetMenu = findViewById(R.id.bt_set_menu);
+        Button btSetOptionMenu = findViewById(R.id.bt_set_option_menu);
+        Button btSetContextMenu = findViewById(R.id.bt_set_context_menu);
 
         btLogin.setOnClickListener(this);
         btRegister.setOnClickListener(this);
@@ -55,7 +56,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btSlideMenu.setOnClickListener(this);
         btSetAnimator.setOnClickListener(this);
         btSetRadioButton.setOnClickListener(this);
-        btSetMenu.setOnClickListener(this);
+        btSetOptionMenu.setOnClickListener(this);
+        btSetContextMenu.setOnClickListener(this);
     }
 
     @Override
@@ -168,9 +170,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent_set_radio_button);
                 break;
 
-            case R.id.bt_set_menu:
+            case R.id.bt_set_option_menu:
                 Intent intent_set_menu = new Intent(MainActivity.this, MenuActivity.class);
                 startActivity(intent_set_menu);
+                break;
+
+            case R.id.bt_set_context_menu:
+                Intent intent_set_context_menu = new Intent(MainActivity.this,
+                        TableAndGridActivity.class);
+                startActivity(intent_set_context_menu);
                 break;
         }
     }
