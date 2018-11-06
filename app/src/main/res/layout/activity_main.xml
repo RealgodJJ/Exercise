@@ -178,7 +178,15 @@
             android:id="@+id/bt_set_radio_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/set_radio_button"/>
+            android:text="@string/set_radio_button"
+            tools:ignore="ButtonStyle" />
+
+        <Button
+            android:id="@+id/bt_set_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/set_menu"
+            tools:ignore="ButtonStyle" />
 
     </LinearLayout>
 

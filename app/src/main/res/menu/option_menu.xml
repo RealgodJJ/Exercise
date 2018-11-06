@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/i_save"
+        android:title="@string/save" />
+
+    <item
+        android:id="@+id/i_settings"
+        android:title="@string/settings" />
+
+    <item
+        android:id="@+id/i_more"
+        android:title="@string/more">
+
+        <menu>
+
+            <item
+                android:id="@+id/i_more_1"
+                android:icon="@mipmap/more1"
+                android:title="@string/more1" />
+
+            <item
+                android:id="@+id/i_more_2"
+                android:icon="@mipmap/more2"
+                android:title="@string/more2" />
+
+        </menu>
+
+    </item>
+
+    <item
+        android:id="@+id/i_exit"
+        android:title="@string/exit" />
+
+</menu>

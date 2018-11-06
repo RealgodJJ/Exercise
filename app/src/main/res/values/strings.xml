@@ -19,6 +19,7 @@
     <string name="slide_menu">进入滑动菜单页面</string>
     <string name="set_animator">进入设置动画效果页面</string>
     <string name="set_radio_button">进入设置单选框页面</string>
+    <string name="set_menu">进入设置菜单页面</string>
     <string name="get_broadcast">接收到广播</string>
     <string name="fragment_first">这是第一个Fragment</string>
     <string name="input_data">输入数据</string>
@@ -75,4 +76,10 @@
     <string name="add_main_process">增加主进度条</string>
     <string name="add_second_process">增加次进度条</string>
     <string name="rate_information">评分：%1$s\t\t\t步进：%2$s\t\t\t是否交互：%3$b</string>
+    <string name="save">保存</string>
+    <string name="settings">设置</string>
+    <string name="more">更多</string>
+    <string name="more1">子菜单1</string>
+    <string name="more2">子菜单2</string>
+    <string name="exit">退出</string>
 </resources>

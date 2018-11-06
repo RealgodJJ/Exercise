@@ -83,6 +83,7 @@
         <activity android:name=".ui.LayoutAnimationActivity" />
         <activity android:name=".ui.RadioButtonActivity" />
         <activity android:name=".ui.TableAndGridActivity" />
+        <activity android:name=".ui.MenuActivity" />
     </application>
 
 </manifest>
