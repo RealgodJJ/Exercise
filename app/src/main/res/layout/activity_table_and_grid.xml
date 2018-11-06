@@ -19,6 +19,7 @@
                 tools:ignore="ButtonStyle,HardcodedText" />
 
             <Button
+                android:id="@+id/bt_popup_menu"
                 android:text="8"
                 tools:ignore="ButtonStyle,HardcodedText" />
 

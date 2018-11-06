@@ -7,12 +7,15 @@ import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.PopupMenu;
 import android.widget.Toast;
 
 
 import reagodjj.example.com.exercise.R;
 
 public class TableAndGridActivity extends AppCompatActivity {
+    private Button btContextMenu, btPopupMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,11 +23,55 @@ public class TableAndGridActivity extends AppCompatActivity {
         setContentView(R.layout.activity_table_and_grid);
 //        registerForContextMenu(findViewById(R.id.bt_context_menu));
 
-        findViewById(R.id.bt_context_menu).setOnLongClickListener(new View.OnLongClickListener() {
+        btContextMenu = findViewById(R.id.bt_context_menu);
+        btPopupMenu = findViewById(R.id.bt_popup_menu);
+
+        btContextMenu.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
                 startActionMode(cb);
                 return false;
+            }
+        });
+
+        btPopupMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopupMenu popupMenu = new PopupMenu(TableAndGridActivity.this, btPopupMenu);
+                popupMenu.getMenuInflater().inflate(R.menu.option_menu, popupMenu.getMenu());
+                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        switch (item.getItemId()) {
+                            case R.id.i_save:
+                                Toast.makeText(TableAndGridActivity.this, R.string.save, Toast.LENGTH_SHORT).show();
+                                break;
+
+                            case R.id.i_settings:
+                                Toast.makeText(TableAndGridActivity.this, R.string.settings, Toast.LENGTH_SHORT).show();
+                                break;
+
+                            case R.id.i_more:
+                                Toast.makeText(TableAndGridActivity.this, R.string.more, Toast.LENGTH_SHORT).show();
+                                break;
+
+                            case R.id.i_exit:
+                                Toast.makeText(TableAndGridActivity.this, R.string.exit, Toast.LENGTH_SHORT).show();
+                                finish();
+                                break;
+
+                            case R.id.i_more_1:
+                                Toast.makeText(TableAndGridActivity.this, R.string.more, Toast.LENGTH_SHORT).show();
+                                break;
+
+                            case R.id.i_more_2:
+                                Toast.makeText(TableAndGridActivity.this, R.string.more, Toast.LENGTH_SHORT).show();
+                                break;
+                        }
+                        return false;
+                    }
+                });
+                popupMenu.show();
             }
         });
     }
