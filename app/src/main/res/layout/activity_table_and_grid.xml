@@ -24,10 +24,12 @@
                 tools:ignore="ButtonStyle,HardcodedText" />
 
             <Button
+                android:id="@+id/bt_normal_dialog"
                 android:text="9"
                 tools:ignore="ButtonStyle,HardcodedText" />
 
             <Button
+                android:id="@+id/bt_normal_dialog1"
                 android:text="/"
                 tools:ignore="ButtonStyle,HardcodedText" />
 

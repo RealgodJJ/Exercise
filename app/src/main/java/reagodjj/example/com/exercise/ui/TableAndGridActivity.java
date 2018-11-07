@@ -1,6 +1,8 @@
 package reagodjj.example.com.exercise.ui;
 
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.ActionMode;
@@ -19,7 +21,7 @@ import java.lang.reflect.Method;
 import reagodjj.example.com.exercise.R;
 
 public class TableAndGridActivity extends AppCompatActivity {
-    private Button btContextMenu, btPopupMenu;
+    private Button btContextMenu, btPopupMenu, btNormalDialog, btNormalDialog1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,8 @@ public class TableAndGridActivity extends AppCompatActivity {
 
         btContextMenu = findViewById(R.id.bt_context_menu);
         btPopupMenu = findViewById(R.id.bt_popup_menu);
+        btNormalDialog = findViewById(R.id.bt_normal_dialog);
+        btNormalDialog1 = findViewById(R.id.bt_normal_dialog1);
 
         btContextMenu.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -76,6 +80,49 @@ public class TableAndGridActivity extends AppCompatActivity {
                     }
                 });
                 popupMenu.show();
+            }
+        });
+
+        btNormalDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(TableAndGridActivity.this);
+                builder.setTitle(R.string.exit).setMessage(R.string.ask_exit)
+                        .setPositiveButton(R.string.sure, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                finish();
+                            }
+                        })
+                        .setNegativeButton(R.string.cancel, null)
+                        .setNeutralButton(R.string.exit, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                finish();
+                            }
+                        }).show();
+            }
+        });
+
+        btNormalDialog1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog alertDialog = new AlertDialog.Builder(TableAndGridActivity.this).create();
+                alertDialog.setTitle("提示");
+                alertDialog.setMessage("请为本次课堂打分");
+                alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "5分", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(TableAndGridActivity.this, "5分", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "3分", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(TableAndGridActivity.this, "3分", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                alertDialog.show();
             }
         });
     }
