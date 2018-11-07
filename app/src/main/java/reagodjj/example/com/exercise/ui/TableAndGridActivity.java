@@ -21,7 +21,7 @@ import java.lang.reflect.Method;
 import reagodjj.example.com.exercise.R;
 
 public class TableAndGridActivity extends AppCompatActivity {
-    private Button btContextMenu, btPopupMenu, btNormalDialog, btNormalDialog1;
+    private Button btContextMenu, btPopupMenu, btNormalDialog, btNormalDialog1, btListDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +33,7 @@ public class TableAndGridActivity extends AppCompatActivity {
         btPopupMenu = findViewById(R.id.bt_popup_menu);
         btNormalDialog = findViewById(R.id.bt_normal_dialog);
         btNormalDialog1 = findViewById(R.id.bt_normal_dialog1);
+        btListDialog = findViewById(R.id.bt_list_dialog);
 
         btContextMenu.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -123,6 +124,20 @@ public class TableAndGridActivity extends AppCompatActivity {
                     }
                 });
                 alertDialog.show();
+            }
+        });
+
+        btListDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final String items[] = {"项目1", "项目2", "项目3", "项目4"};
+                AlertDialog.Builder builder = new AlertDialog.Builder(TableAndGridActivity.this);
+                builder.setTitle("FUCK").setItems(items, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(TableAndGridActivity.this, items[which], Toast.LENGTH_SHORT).show();
+                    }
+                }).show();
             }
         });
     }

@@ -38,6 +38,7 @@
         <TableRow>
 
             <Button
+                android:id="@+id/bt_list_dialog"
                 android:text="4"
                 tools:ignore="ButtonStyle,HardcodedText" />
 
