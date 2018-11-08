@@ -43,6 +43,7 @@
                 tools:ignore="ButtonStyle,HardcodedText" />
 
             <Button
+                android:id="@+id/bt_single_choice_dialog"
                 android:text="5"
                 tools:ignore="ButtonStyle,HardcodedText" />
 

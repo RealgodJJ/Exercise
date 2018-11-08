@@ -6,7 +6,6 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.ActionMode;
-import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.SubMenu;
@@ -21,7 +20,9 @@ import java.lang.reflect.Method;
 import reagodjj.example.com.exercise.R;
 
 public class TableAndGridActivity extends AppCompatActivity {
-    private Button btContextMenu, btPopupMenu, btNormalDialog, btNormalDialog1, btListDialog;
+    private Button btContextMenu, btPopupMenu, btNormalDialog, btNormalDialog1, btListDialog,
+            btSingleChoiceDialog;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,7 @@ public class TableAndGridActivity extends AppCompatActivity {
         btNormalDialog = findViewById(R.id.bt_normal_dialog);
         btNormalDialog1 = findViewById(R.id.bt_normal_dialog1);
         btListDialog = findViewById(R.id.bt_list_dialog);
+        btSingleChoiceDialog = findViewById(R.id.bt_single_choice_dialog);
 
         btContextMenu.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -136,6 +138,26 @@ public class TableAndGridActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Toast.makeText(TableAndGridActivity.this, items[which], Toast.LENGTH_SHORT).show();
+                    }
+                }).show();
+            }
+        });
+
+        btSingleChoiceDialog.setOnClickListener(new View.OnClickListener() {
+            int index = 0;
+            @Override
+            public void onClick(View v) {
+                final String stars[] = {"林俊杰", "周杰伦", "Derrick Rose", "江疏影"};
+                AlertDialog.Builder builder = new AlertDialog.Builder(TableAndGridActivity.this);
+                builder.setTitle("您最喜欢的明星是：").setSingleChoiceItems(stars, 0, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        index = which;
+                    }
+                }).setPositiveButton(R.string.sure, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(TableAndGridActivity.this, stars[index], Toast.LENGTH_SHORT).show();
                     }
                 }).show();
             }
