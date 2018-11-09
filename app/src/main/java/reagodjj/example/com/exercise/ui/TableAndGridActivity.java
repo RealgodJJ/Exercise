@@ -1,6 +1,7 @@
 package reagodjj.example.com.exercise.ui;
 
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -16,12 +17,15 @@ import android.widget.Toast;
 
 
 import java.lang.reflect.Method;
+import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import reagodjj.example.com.exercise.R;
 
 public class TableAndGridActivity extends AppCompatActivity {
     private Button btContextMenu, btPopupMenu, btNormalDialog, btNormalDialog1, btListDialog,
-            btSingleChoiceDialog;
+            btSingleChoiceDialog, btMultiChoiceDialog, btProgressDialog;
 
 
     @Override
@@ -36,6 +40,8 @@ public class TableAndGridActivity extends AppCompatActivity {
         btNormalDialog1 = findViewById(R.id.bt_normal_dialog1);
         btListDialog = findViewById(R.id.bt_list_dialog);
         btSingleChoiceDialog = findViewById(R.id.bt_single_choice_dialog);
+        btMultiChoiceDialog = findViewById(R.id.bt_multi_choice_dialog);
+        btProgressDialog = findViewById(R.id.bt_progress_dialog);
 
         btContextMenu.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -145,6 +151,7 @@ public class TableAndGridActivity extends AppCompatActivity {
 
         btSingleChoiceDialog.setOnClickListener(new View.OnClickListener() {
             int index = 0;
+
             @Override
             public void onClick(View v) {
                 final String stars[] = {"林俊杰", "周杰伦", "Derrick Rose", "江疏影"};
@@ -160,6 +167,52 @@ public class TableAndGridActivity extends AppCompatActivity {
                         Toast.makeText(TableAndGridActivity.this, stars[index], Toast.LENGTH_SHORT).show();
                     }
                 }).show();
+            }
+        });
+
+        btMultiChoiceDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final String sports[] = {"篮球", "保龄球", "乒乓球", "羽毛球", "游泳", "跑步"};
+                final boolean checked[] = {true, true, true, true, false, false};
+                AlertDialog.Builder builder = new AlertDialog.Builder(TableAndGridActivity.this);
+                builder.setTitle("您喜欢的运动：").setMultiChoiceItems(sports, checked, new DialogInterface.OnMultiChoiceClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which, boolean isChecked) {
+                        //Do nothing(checked = isChecked)
+                    }
+                }).setPositiveButton(R.string.sure, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        StringBuilder msg = new StringBuilder("您喜欢的运动：");
+                        for (int i = 0; i < checked.length; i++) {
+                            if (checked[i]) {
+                                msg.append(sports[i]).append(" ");
+                            }
+                        }
+                        Toast.makeText(TableAndGridActivity.this, msg, Toast.LENGTH_SHORT).show();
+                    }
+                }).show();
+            }
+        });
+
+        btProgressDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final ProgressDialog progressDialog = new ProgressDialog(TableAndGridActivity.this);
+                progressDialog.setTitle("我是一个等待对话框");
+                progressDialog.setMessage("请等待......");
+                progressDialog.setCancelable(false);//默认是true，即不可手动取消
+                progressDialog.show();
+
+                //3秒后自动关闭
+                Timer timer = new Timer();
+                timer.schedule(new TimerTask() {
+                    public void run() {
+                        progressDialog.dismiss();
+                    }
+                }, 3000, 3000);
+
             }
         });
     }

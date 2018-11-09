@@ -48,10 +48,12 @@
                 tools:ignore="ButtonStyle,HardcodedText" />
 
             <Button
+                android:id="@+id/bt_multi_choice_dialog"
                 android:text="6"
                 tools:ignore="ButtonStyle,HardcodedText" />
 
             <Button
+                android:id="@+id/bt_progress_dialog"
                 android:text="*"
                 tools:ignore="ButtonStyle,HardcodedText" />
 
