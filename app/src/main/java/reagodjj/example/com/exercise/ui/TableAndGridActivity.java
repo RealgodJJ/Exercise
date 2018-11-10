@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
@@ -25,7 +26,8 @@ import reagodjj.example.com.exercise.R;
 
 public class TableAndGridActivity extends AppCompatActivity {
     private Button btContextMenu, btPopupMenu, btNormalDialog, btNormalDialog1, btListDialog,
-            btSingleChoiceDialog, btMultiChoiceDialog, btProgressDialog;
+            btSingleChoiceDialog, btMultiChoiceDialog, btProgressDialog, btProgressHorizontalDialog,
+            btInputDialog;
 
 
     @Override
@@ -42,6 +44,8 @@ public class TableAndGridActivity extends AppCompatActivity {
         btSingleChoiceDialog = findViewById(R.id.bt_single_choice_dialog);
         btMultiChoiceDialog = findViewById(R.id.bt_multi_choice_dialog);
         btProgressDialog = findViewById(R.id.bt_progress_dialog);
+        btProgressHorizontalDialog = findViewById(R.id.bt_progress_horizontal_dialog);
+        btInputDialog = findViewById(R.id.bt_input_dialog);
 
         btContextMenu.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -211,8 +215,50 @@ public class TableAndGridActivity extends AppCompatActivity {
                     public void run() {
                         progressDialog.dismiss();
                     }
-                }, 3000, 3000);
+                }, 3000);
 
+            }
+        });
+
+        btProgressHorizontalDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final ProgressDialog progressDialog = new ProgressDialog(TableAndGridActivity.this);
+                progressDialog.setTitle("");
+                progressDialog.setMessage("资源加载中......");
+                progressDialog.setCancelable(true);
+                progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+                progressDialog.show();
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        for (int i = 0; i < 100; i++) {
+                            try {
+                                Thread.sleep(50);
+                                progressDialog.setProgress(i);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        progressDialog.dismiss();
+                    }
+                }).start();
+            }
+        });
+
+        btInputDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final EditText editText = new EditText(TableAndGridActivity.this);
+                AlertDialog.Builder builder = new AlertDialog.Builder(TableAndGridActivity.this);
+                builder.setTitle("请输入您的姓名：").setView(editText)
+                        .setPositiveButton(R.string.sure, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Toast.makeText(TableAndGridActivity.this,
+                                        "欢迎您，" + editText.getText().toString(), Toast.LENGTH_SHORT).show();
+                            }
+                        }).show();
             }
         });
     }

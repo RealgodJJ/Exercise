@@ -62,10 +62,12 @@
         <TableRow>
 
             <Button
+                android:id="@+id/bt_progress_horizontal_dialog"
                 android:text="1"
                 tools:ignore="ButtonStyle,HardcodedText" />
 
             <Button
+                android:id="@+id/bt_input_dialog"
                 android:text="2"
                 tools:ignore="ButtonStyle,HardcodedText" />
 
