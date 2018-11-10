@@ -72,10 +72,12 @@
                 tools:ignore="ButtonStyle,HardcodedText" />
 
             <Button
+                android:id="@+id/bt_diy_dialog"
                 android:text="3"
                 tools:ignore="ButtonStyle,HardcodedText" />
 
             <Button
+                android:id="@+id/bt_array_dialog"
                 android:text="-"
                 tools:ignore="ButtonStyle,HardcodedText" />
 

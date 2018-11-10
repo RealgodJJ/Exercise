@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.PopupMenu;
@@ -18,7 +19,6 @@ import android.widget.Toast;
 
 
 import java.lang.reflect.Method;
-import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -27,7 +27,7 @@ import reagodjj.example.com.exercise.R;
 public class TableAndGridActivity extends AppCompatActivity {
     private Button btContextMenu, btPopupMenu, btNormalDialog, btNormalDialog1, btListDialog,
             btSingleChoiceDialog, btMultiChoiceDialog, btProgressDialog, btProgressHorizontalDialog,
-            btInputDialog;
+            btInputDialog, btDiyDialog, btArrayDialog;
 
 
     @Override
@@ -46,6 +46,8 @@ public class TableAndGridActivity extends AppCompatActivity {
         btProgressDialog = findViewById(R.id.bt_progress_dialog);
         btProgressHorizontalDialog = findViewById(R.id.bt_progress_horizontal_dialog);
         btInputDialog = findViewById(R.id.bt_input_dialog);
+        btDiyDialog = findViewById(R.id.bt_diy_dialog);
+        btArrayDialog = findViewById(R.id.bt_array_dialog);
 
         btContextMenu.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -259,6 +261,34 @@ public class TableAndGridActivity extends AppCompatActivity {
                                         "欢迎您，" + editText.getText().toString(), Toast.LENGTH_SHORT).show();
                             }
                         }).show();
+            }
+        });
+
+        btDiyDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MyDialog myDialog = new MyDialog(TableAndGridActivity.this, R.style.myDialog);
+                myDialog.show();
+            }
+        });
+
+        btArrayDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final String items[] = {"Java", "Mysql", "Android", "HTML", "C", "JavaScript"};
+                //默认操作方式
+//                ArrayAdapter adapter = new ArrayAdapter(TableAndGridActivity.this,
+//                        android.R.layout.simple_dropdown_item_1line, items);
+                //自定义选项方式
+                ArrayAdapter adapter = new ArrayAdapter(TableAndGridActivity.this,
+                        R.layout.array_item_layout, R.id.tv_text, items);
+                AlertDialog.Builder builder = new AlertDialog.Builder(TableAndGridActivity.this);
+                builder.setTitle("请选择").setAdapter(adapter, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(TableAndGridActivity.this, items[which], Toast.LENGTH_SHORT).show();
+                    }
+                }).show();
             }
         });
     }
