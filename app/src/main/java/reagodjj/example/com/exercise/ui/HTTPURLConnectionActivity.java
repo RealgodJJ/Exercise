@@ -28,7 +28,7 @@ import reagodjj.example.com.exercise.entity.PublicSecurityNetwork;
 
 @SuppressLint("Registered")
 public class HTTPURLConnectionActivity extends AppCompatActivity {
-//    private static final String BASE_URL = "http://www.mengxianyi.net/one/homepage.json";
+    //    private static final String BASE_URL = "http://www.mengxianyi.net/one/homepage.json";
     private static final String NET_URL = "https://www.sojson.com/api/gongan/sina.com.cn";
     private TextView tvFuck;
     private Button btGetData;
@@ -98,7 +98,14 @@ public class HTTPURLConnectionActivity extends AppCompatActivity {
                     URL url = new URL(NET_URL);
                     HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
                     connection.setRequestMethod("GET");
-                    InputStream inputStream = connection.getInputStream();
+                    InputStream inputStream;
+                    int code = connection.getResponseCode();
+                    if (code == 200) {
+                        inputStream = connection.getInputStream(); // 得到网络返回的输入流
+                    } else {
+                        inputStream = connection.getErrorStream(); // 得到网络返回的输入流
+                    }
+
                     StringBuilder builder = new StringBuilder();
                     String line;
                     BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));

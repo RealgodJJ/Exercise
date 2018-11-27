@@ -9,12 +9,13 @@ import android.widget.Button;
 
 import reagodjj.example.com.exercise.R;
 
-public class MyDialog extends Dialog {
+class MyDialog extends Dialog {
 
     //参数2：制定对话框的样式风格
     MyDialog(@NonNull Context context, @StyleRes int themeResId) {
         super(context, themeResId);
         setContentView(R.layout.diy_dialog);
+        setCancelable(false);
 
         Button yesBtn = findViewById(R.id.yes_btn);
         Button noBtn = findViewById(R.id.no_btn);

@@ -87,4 +87,10 @@
     <string name="sure">确定</string>
     <string name="cancel">取消</string>
     <string name="prompt">提示</string>
+    <string name="set_handler">进入Handler界面</string>
+    <string name="receive_handler_message">接收线程的消息</string>
+    <string name="download">下载</string>
+    <string name="realgodjj">RealgodJJ</string>
+    <string name="download_fail">下载失败</string>
+    <string name="count_time_max">10</string>
 </resources>

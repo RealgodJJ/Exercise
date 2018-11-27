@@ -188,11 +188,26 @@
             android:text="@string/set_option_menu"
             tools:ignore="ButtonStyle" />
 
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
         <Button
             android:id="@+id/bt_set_context_menu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/set_context_menu"
+            tools:ignore="ButtonStyle" />
+
+        <Button
+            android:id="@+id/bt_set_handler"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/set_handler"
             tools:ignore="ButtonStyle" />
 
     </LinearLayout>
