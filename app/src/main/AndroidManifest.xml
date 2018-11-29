@@ -5,8 +5,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_CALL_LOG" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -86,7 +86,8 @@
         <activity android:name=".ui.RadioButtonActivity" />
         <activity android:name=".ui.TableAndGridActivity" />
         <activity android:name=".ui.MenuActivity" />
-        <activity android:name=".ui.HandlerActivity"/>
+        <activity android:name=".ui.HandlerActivity" />
+        <activity android:name=".ui.GophersActivity" />
     </application>
 
 </manifest>

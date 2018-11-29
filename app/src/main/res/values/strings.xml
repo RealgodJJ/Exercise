@@ -93,4 +93,8 @@
     <string name="realgodjj">RealgodJJ</string>
     <string name="download_fail">下载失败</string>
     <string name="count_time_max">10</string>
+    <string name="game_begin">游戏开始</string>
+    <string name="in_game">游戏中…</string>
+    <string name="game_over">游戏结束</string>
+    <string name="beat_gophers">打地鼠</string>
 </resources>

@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button btSetOptionMenu = findViewById(R.id.bt_set_option_menu);
         Button btSetContextMenu = findViewById(R.id.bt_set_context_menu);
         Button btSetHandler = findViewById(R.id.bt_set_handler);
+        Button btBeatGophers = findViewById(R.id.bt_beat_gophers);
 
         btLogin.setOnClickListener(this);
         btRegister.setOnClickListener(this);
@@ -60,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btSetOptionMenu.setOnClickListener(this);
         btSetContextMenu.setOnClickListener(this);
         btSetHandler.setOnClickListener(this);
+        btBeatGophers.setOnClickListener(this);
     }
 
     @Override
@@ -185,6 +187,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.bt_set_handler:
                 Intent intent_set_handler = new Intent(MainActivity.this, HandlerActivity.class);
                 startActivity(intent_set_handler);
+                break;
+
+            case R.id.bt_beat_gophers:
+                Intent intent_beat_gophers = new Intent(MainActivity.this, GophersActivity.class);
+                startActivity(intent_beat_gophers);
                 break;
         }
     }

@@ -210,6 +210,13 @@
             android:text="@string/set_handler"
             tools:ignore="ButtonStyle" />
 
+        <Button
+            android:id="@+id/bt_beat_gophers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/beat_gophers"
+            tools:ignore="ButtonStyle" />
+
     </LinearLayout>
 
 </LinearLayout>

@@ -30,6 +30,7 @@ public class HandlerActivity extends AppCompatActivity {
     public static final int COUNT_DOWN_TIME = 2;
     public static final int DELAY_MILLIS = 1000;
     public static final int COUNT_DOWN_MAX_TIME = 10;
+    public static final String HTTP_DOWNLOAD = "http://download.sj.qq.com/upload/connAssitantDownload/upload/MobileAssistant_1.apk";
     private TextView tvShowHandlerMessage, tvShowCountDownTime;
     private Button btReceiveMessage, btDownload;
     private ProgressBar pbDownload;
@@ -91,7 +92,7 @@ public class HandlerActivity extends AppCompatActivity {
             }
         });
 
-        /**
+        /*
          * 主线程 -->start
          * 点击按钮 |
          * 发起下载 |
@@ -104,7 +105,7 @@ public class HandlerActivity extends AppCompatActivity {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        download("http://download.sj.qq.com/upload/connAssitantDownload/upload/MobileAssistant_1.apk");
+                        download(HTTP_DOWNLOAD);
                     }
                 }).start();
             }
@@ -167,7 +168,7 @@ public class HandlerActivity extends AppCompatActivity {
         e.printStackTrace();
     }
 
-    public static class CountDownHandler extends Handler {
+    private static class CountDownHandler extends Handler {
         static final int COUNT_DOWN_MIN_TIME = 0;
         final WeakReference<HandlerActivity> handlerActivityWeakReference;
 
